@@ -1,0 +1,67 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "metalcharts"
+dynamic = ["version"]
+description = "Python client for the MetalCharts API: live and historical gold, silver, platinum, palladium, copper and base metal prices, plus COMEX, LBMA, Shanghai and CFTC data."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+authors = [{ name = "MetalCharts", email = "support@metalcharts.org" }]
+keywords = [
+  "metals api",
+  "gold price api",
+  "silver price api",
+  "gold price",
+  "silver price",
+  "precious metals",
+  "spot price",
+  "xau",
+  "xag",
+  "comex",
+  "lbma",
+  "commodities",
+  "metalcharts",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Office/Business :: Financial",
+  "Topic :: Office/Business :: Financial :: Investment",
+  "Typing :: Typed",
+]
+dependencies = ["httpx>=0.24,<1"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://metalcharts.org/metals-api"
+Documentation = "https://metalcharts.org/metals-api/docs"
+Pricing = "https://metalcharts.org/api-pricing"
+Source = "https://github.com/maxcash2147/metalcharts-python"
+Issues = "https://github.com/maxcash2147/metalcharts-python/issues"
+
+[tool.hatch.version]
+path = "src/metalcharts/_version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/metalcharts"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/metalcharts", "tests", "README.md", "LICENSE"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
