@@ -9,7 +9,7 @@ Python client for the [MetalCharts API](https://metalcharts.org/metals-api): spo
 ## Install
 
 ```bash
-pip install metalcharts
+pip install git+https://github.com/maxcash2147/metalcharts-python
 ```
 
 Get a free API key at [metalcharts.org/metals-api](https://metalcharts.org/metals-api). The free plan has 200 requests a month and 30 days of daily history, with no card.
